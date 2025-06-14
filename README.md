@@ -3,7 +3,7 @@
 **TermKit** is a cross-platform terminal toolkit for macOS and Windows.  
 It shows an interactive, categorized menu of useful system commands — copied to your clipboard instead of being executed directly.
 
-🖥️ Stop googling shell commands. Just launch TermKit, navigate, and copy.
+🖥️ Stop googling commands. Just launch TermKit, navigate, and copy.
 
 ---
 
