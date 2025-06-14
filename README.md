@@ -83,7 +83,7 @@ Launch **TermKit**:
 | **Enter**           | Enter category                  |
 | ↑ / ↓        | Move between items              |
 | **Enter**    | Copy command to clipboard       |
-| *(Paste)*    | Manually paste into your terminal |
+| **Cmd/Ctrl + V**    | Manually paste into your terminal |
 | **q**      | Quit                            |
 
 ---
