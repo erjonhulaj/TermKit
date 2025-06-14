@@ -125,7 +125,9 @@ You may **not**:
 
 ### 🤝 Contribute
 
-This project was built for personal use but is open to ideas & feedback.  
+This project was built for personal use but is open to ideas & feedback.
+
+Note: This project is not related to the legacy TermKit by @unconed (2011).
 
 Made by **Erjon Hulaj**
 
