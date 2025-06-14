@@ -1,4 +1,4 @@
-# 🧰 TermKit
+# TermKit
 
 **TermKit** is a cross-platform terminal toolkit for macOS and Windows.  
 It shows an interactive, categorized menu of useful system commands — copied to your clipboard instead of being executed directly.
@@ -58,7 +58,7 @@ Now you can open any terminal and type:
 tk
 ```
 
-### 🪟 Windows Installation
+### Windows
 
 1. Download and unzip `termkit-win.zip`  
 2. Run `install.bat` by double-clicking it  
@@ -69,7 +69,7 @@ tk
 tk
 ```
 
-### 🧪 How to Use
+### 🔧 How to Use
 
 Launch **TermKit**:
 
