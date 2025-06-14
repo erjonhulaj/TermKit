@@ -9,10 +9,10 @@ It shows an interactive, categorized menu of useful system commands — copied t
 
 ## 📦 Downloads
 
-| Platform | File | Link |
-|----------|------|------|
-| macOS    | `termkit-mac.zip` | [⬇ Download](./termkit-mac.zip) |
-| Windows  | `termkit-win.zip` | [⬇ Download](./termkit-win.zip) |
+| Platform | File |
+|----------|------|
+| macOS    | `termkit-mac.zip` |
+| Windows  | `termkit-win.zip` |
 
 ---
 
