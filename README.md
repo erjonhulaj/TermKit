@@ -11,8 +11,8 @@ It shows an interactive, categorized menu of useful system commands — copied t
 
 | Platform | File |
 |----------|------|
-| macOS    | `termkit-mac.zip` |
-| Windows  | `termkit-win.zip` |
+| macOS    | [Download termkit-mac.zip](https://github.com/erjonhulaj/TermKit/releases/download/v1.0.0/termkit-mac.zip) |
+| Windows  | [Download termkit-win.zip](https://github.com/erjonhulaj/TermKit/releases/download/v1.0.0/termkit-win.zip) |
 
 ---
 
