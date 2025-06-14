@@ -63,11 +63,12 @@ tk
 
 1. Download and unzip `termkit-win.zip`  
 2. Run `install.bat` by double-clicking it  
-3. The alias `tk` will be added to your `PATH`  
+3. The aliases `tk` `termkit` will be added to your `PATH`  
 4. Open any terminal (CMD or PowerShell) and run:
 
 ```bat
 tk
+termkit
 ```
 
 ### 🔧 How to Use
@@ -75,7 +76,7 @@ tk
 Launch **TermKit**:
 
 - **macOS:** `tk`
-- **Windows:** `tk`
+- **Windows:** `tk` `termkit`
 
 **Navigation**
 
