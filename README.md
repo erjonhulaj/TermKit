@@ -23,7 +23,8 @@ It shows an interactive, categorized menu of useful system commands — copied t
 - System, Network, Development, Custom categories
 - Commands are *copied*, not executed (safety first!)
 - Extendable with your own custom commands
-- Favorites and search planned
+- Favorites
+- Search
 - Works offline after setup
 
 ---
