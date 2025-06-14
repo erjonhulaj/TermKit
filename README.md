@@ -19,7 +19,7 @@ It shows an interactive, categorized menu of useful system commands — copied t
 ## ✅ Features
 
 - Clean Textual-based TUI
-- Arrow-key navigation (← → ↑ ↓ + Enter)
+- Arrow-key navigation (↑ ↓ + Enter)
 - System, Network, Development, Custom categories
 - Commands are *copied*, not executed (safety first!)
 - Extendable with your own custom commands
