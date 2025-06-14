@@ -1,0 +1,427 @@
+[
+  {
+    "label": "System",
+    "children": [
+      {
+        "label": "Information",
+        "children": [
+          {
+            "name": "Windows Version",
+            "command": "ver",
+            "description": "Display Windows version"
+          },
+          {
+            "name": "System Info",
+            "command": "systeminfo",
+            "description": "Detailed OS and hardware info"
+          },
+          {
+            "name": "Installed Updates",
+            "command": "wmic qfe list",
+            "description": "List installed Windows updates (hotfixes)"
+          },
+          {
+            "name": "CPU Model",
+            "command": "wmic cpu get name",
+            "description": "Show CPU model name"
+          },
+          {
+            "name": "RAM Summary",
+            "command": "wmic MemoryChip get Capacity,Manufacturer,Speed",
+            "description": "List physical memory modules"
+          },
+          {
+            "name": "Battery Status (laptops)",
+            "command": "powercfg /batteryreport /output %USERPROFILE%\\Desktop\\battery_report.html",
+            "description": "Generate battery health report"
+          }
+        ]
+      },
+      {
+        "label": "System Actions",
+        "children": [
+          {
+            "name": "Restart",
+            "command": "shutdown /r /t 0",
+            "description": "Restart immediately"
+          },
+          {
+            "name": "Shutdown",
+            "command": "shutdown /s /t 0",
+            "description": "Shut down immediately"
+          },
+          {
+            "name": "Sign Out",
+            "command": "shutdown /l",
+            "description": "Log off current user"
+          },
+          {
+            "name": "Lock Screen",
+            "command": "rundll32 user32.dll,LockWorkStation",
+            "description": "Lock workstation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Network",
+    "children": [
+      {
+        "label": "IP & DNS",
+        "children": [
+          {
+            "name": "Show IP Config",
+            "command": "ipconfig /all",
+            "description": "Display IP and DNS info for all adapters"
+          },
+          {
+            "name": "Release DHCP Lease",
+            "command": "ipconfig /release",
+            "description": "Release all DHCP leases"
+          },
+          {
+            "name": "Renew DHCP Lease",
+            "command": "ipconfig /renew",
+            "description": "Renew all DHCP leases"
+          },
+          {
+            "name": "Flush DNS Cache",
+            "command": "ipconfig /flushdns",
+            "description": "Clear local DNS resolver cache"
+          }
+        ]
+      },
+      {
+        "label": "Connections",
+        "children": [
+          {
+            "name": "Listening Ports",
+            "command": "netstat -an | find \"LISTEN\"",
+            "description": "Show all listening ports"
+          },
+          {
+            "name": "Active Connections",
+            "command": "netstat -ano",
+            "description": "Show all connections with PID"
+          }
+        ]
+      },
+      {
+        "label": "Wi-Fi",
+        "children": [
+          {
+            "name": "List Wi-Fi Profiles",
+            "command": "netsh wlan show profiles",
+            "description": "Show saved wireless profiles"
+          },
+          {
+            "name": "Show Wi-Fi Password",
+            "command": "netsh wlan show profile name=\"__WiFi__\" key=clear",
+            "description": "Reveal password for Wi-Fi profile"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Security & Firewall",
+    "children": [
+      {
+        "name": "Firewall Status",
+        "command": "netsh advfirewall show allprofiles",
+        "description": "Show firewall state for all profiles"
+      },
+      {
+        "name": "Enable Firewall",
+        "command": "netsh advfirewall set allprofiles state on",
+        "description": "Turn on the firewall"
+      },
+      {
+        "name": "Disable Firewall",
+        "command": "netsh advfirewall set allprofiles state off",
+        "description": "Turn off the firewall"
+      }
+    ]
+  },
+  {
+    "label": "Startup & Services",
+    "children": [
+      {
+        "name": "Startup Apps",
+        "command": "wmic startup get caption, command",
+        "description": "List startup apps and paths"
+      },
+      {
+        "name": "Running Services",
+        "command": "net start",
+        "description": "List all currently running services"
+      },
+      {
+        "name": "List Services (detailed)",
+        "command": "sc queryex type= service state= all",
+        "description": "All services with status and PID"
+      }
+    ]
+  },
+  {
+    "label": "Development",
+    "children": [
+      {
+        "label": "Git",
+        "children": [
+          {
+            "name": "Status",
+            "command": "git status",
+            "description": "Show working directory status"
+          },
+          {
+            "name": "Recent Commits",
+            "command": "git log --oneline -10",
+            "description": "Last 10 commits"
+          }
+        ]
+      },
+      {
+        "label": "Python",
+        "children": [
+          {
+            "name": "Python Version",
+            "command": "python --version",
+            "description": "Installed Python version"
+          },
+          {
+            "name": "Create venv",
+            "command": "python -m venv venv",
+            "description": "Create virtual environment in ./venv"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Package Managers",
+    "children": [
+      {
+        "label": "Chocolatey",
+        "children": [
+          {
+            "name": "Choco Upgrade All",
+            "command": "choco upgrade all -y",
+            "description": "Upgrade all Chocolatey packages"
+          },
+          {
+            "name": "Choco List Installed",
+            "command": "choco list --local-only",
+            "description": "List installed choco packages"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Files & Directories",
+    "children": [
+      {
+        "label": "Navigation",
+        "children": [
+          {
+            "name": "Change Directory",
+            "command": "cd C:\\Users\\Public",
+            "description": "Change to Public folder"
+          },
+          {
+            "name": "List Contents",
+            "command": "dir /a",
+            "description": "Detailed directory listing"
+          },
+          {
+            "name": "Search Filename",
+            "command": "dir /s /b C:\\Users\\Public\\example.txt",
+            "description": "Find file by name recursively"
+          }
+        ]
+      },
+      {
+        "label": "Operations",
+        "children": [
+          {
+            "name": "Copy File",
+            "command": "copy C:\\Temp\\source.txt C:\\Temp\\destination.txt",
+            "description": "Copy file"
+          },
+          {
+            "name": "Move/Rename File",
+            "command": "move C:\\Temp\\old.txt C:\\Temp\\new.txt",
+            "description": "Move or rename file"
+          },
+          {
+            "name": "Delete File",
+            "command": "del C:\\Temp\\unwanted.txt",
+            "description": "Delete file"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Users & Permissions",
+    "children": [
+      {
+        "label": "Users",
+        "children": [
+          {
+            "name": "Current User",
+            "command": "whoami",
+            "description": "Show current username"
+          },
+          {
+            "name": "List Local Users",
+            "command": "net user",
+            "description": "List local user accounts"
+          }
+        ]
+      },
+      {
+        "label": "Permissions",
+        "children": [
+          {
+            "name": "Show File ACL",
+            "command": "icacls C:\\Users\\Public\\example.txt",
+            "description": "Display file permissions"
+          },
+          {
+            "name": "Grant Full Control",
+            "command": "icacls C:\\Users\\Public\\example.txt /grant __USERNAME__:F",
+            "description": "Grant full control for current user"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Processes & Tasks",
+    "children": [
+      {
+        "name": "Tasklist",
+        "command": "tasklist",
+        "description": "List running processes"
+      },
+      {
+        "name": "Kill Process by PID",
+        "command": "taskkill /PID __PID__ /F",
+        "description": "Replace __PID__ with process ID to kill"
+      },
+      {
+        "name": "Kill by Image Name",
+        "command": "taskkill /IM notepad.exe /F",
+        "description": "Kill all Notepad processes"
+      }
+    ]
+  },
+  {
+    "label": "Debug & Logs",
+    "children": [
+      {
+        "name": "System Log (last 10)",
+        "command": "wevtutil qe System /c:10 /f:text",
+        "description": "Tail end of system log"
+      },
+      {
+        "name": "Application Log (last 10)",
+        "command": "wevtutil qe Application /c:10 /f:text",
+        "description": "Tail end of application log"
+      }
+    ]
+  },
+  {
+    "label": "Network Tools",
+    "children": [
+      {
+        "name": "Ping",
+        "command": "ping -n 4 google.com",
+        "description": "Ping 4 times"
+      },
+      {
+        "name": "Traceroute",
+        "command": "tracert google.com",
+        "description": "Trace route to Google"
+      },
+      {
+        "name": "Curl (Windows 10+)",
+        "command": "curl -I https://example.com",
+        "description": "HTTP HEAD request"
+      },
+      {
+        "name": "DNS Lookup",
+        "command": "nslookup example.com",
+        "description": "DNS lookup"
+      }
+    ]
+  },
+  {
+    "label": "System Maintenance",
+    "children": [
+      {
+        "name": "Disk Cleanup UI",
+        "command": "cleanmgr",
+        "description": "Launch Disk Cleanup"
+      },
+      {
+        "name": "Check Disk (Read-only)",
+        "command": "chkdsk C:",
+        "description": "Check disk for errors"
+      },
+      {
+        "name": "Defrag System Drive",
+        "command": "defrag C:",
+        "description": "Defragment C: drive"
+      }
+    ]
+  },
+  {
+    "label": "Clipboard",
+    "children": [
+      {
+        "name": "Show Clipboard Content",
+        "command": "powershell -command \"Get-Clipboard\"",
+        "description": "Display clipboard text"
+      },
+      {
+        "name": "Copy File to Clipboard",
+        "command": "type C:\\Users\\Public\\example.txt | clip",
+        "description": "Copy file contents to clipboard"
+      }
+    ]
+  },
+  {
+    "label": "Apps & Tools",
+    "children": [
+      {
+        "name": "Open Task Manager",
+        "command": "taskmgr",
+        "description": "Launch Task Manager"
+      },
+      {
+        "name": "Open Control Panel",
+        "command": "control",
+        "description": "Open Control Panel"
+      },
+      {
+        "name": "PowerShell Prompt",
+        "command": "powershell",
+        "description": "Open interactive PowerShell"
+      },
+      {
+        "name": "Open Group Policy Editor",
+        "command": "gpedit.msc",
+        "description": "Launch local group policy editor"
+      },
+      {
+        "name": "Open Device Manager",
+        "command": "devmgmt.msc",
+        "description": "Launch Device Manager"
+      }
+    ]
+  }
+]

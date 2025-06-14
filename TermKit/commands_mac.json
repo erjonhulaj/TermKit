@@ -1,0 +1,402 @@
+[
+  {
+    "label": "System",
+    "children": [
+      {
+        "label": "Information",
+        "children": [
+          {
+            "name": "macOS Version",
+            "command": "sw_vers",
+            "description": "Show macOS version details"
+          },
+          {
+            "name": "Kernel & Arch",
+            "command": "uname -a",
+            "description": "Display kernel and architecture"
+          },
+          {
+            "name": "CPU Model",
+            "command": "sysctl -n machdep.cpu.brand_string",
+            "description": "Show CPU model name"
+          },
+          {
+            "name": "Memory Usage",
+            "command": "top -l 1 -s 0 | grep PhysMem",
+            "description": "Quick RAM usage summary"
+          },
+          {
+            "name": "Disk Space",
+            "command": "df -h",
+            "description": "Display mounted disks and usage"
+          },
+          {
+            "name": "Hardware Overview",
+            "command": "system_profiler SPHardwareDataType",
+            "description": "Detailed hardware specs"
+          }
+        ]
+      },
+      {
+        "label": "System Actions",
+        "children": [
+          {
+            "name": "Restart",
+            "command": "sudo shutdown -r now",
+            "description": "Restart immediately"
+          },
+          {
+            "name": "Shutdown",
+            "command": "sudo shutdown -h now",
+            "description": "Shut down immediately"
+          },
+          {
+            "name": "Logout",
+            "command": "osascript -e 'tell application \"System Events\" to log out'",
+            "description": "Log out current user"
+          },
+          {
+            "name": "Lock Screen",
+            "command": "pmset displaysleepnow",
+            "description": "Lock screen right away"
+          },
+          {
+            "name": "Flush DNS Cache",
+            "command": "sudo killall -HUP mDNSResponder",
+            "description": "Clear DNS resolver cache"
+          },
+          {
+            "name": "Reboot into Recovery",
+            "command": "sudo nvram recovery-boot-mode=unused && sudo shutdown -r now",
+            "description": "Boot into recovery mode (Intel Macs only)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Network",
+    "children": [
+      {
+        "label": "IP & DNS",
+        "children": [
+          {
+            "name": "Show All IPs",
+            "command": "ifconfig",
+            "description": "Display all interface IP addresses"
+          },
+          {
+            "name": "Current Wi-Fi IP",
+            "command": "ipconfig getifaddr en0",
+            "description": "Show Wi-Fi interface IPv4"
+          },
+          {
+            "name": "DNS Resolver Info",
+            "command": "scutil --dns",
+            "description": "Display current DNS configuration"
+          }
+        ]
+      },
+      {
+        "label": "Connections",
+        "children": [
+          {
+            "name": "Open TCP Ports",
+            "command": "lsof -nP -iTCP -sTCP:LISTEN",
+            "description": "List listening TCP ports"
+          },
+          {
+            "name": "Active Connections",
+            "command": "netstat -anv | grep ESTABLISHED",
+            "description": "Show established network connections"
+          },
+          {
+            "name": "List All Network Services",
+            "command": "networksetup -listallnetworkservices",
+            "description": "Show all known network services"
+          }
+        ]
+      },
+      {
+        "label": "Wi-Fi",
+        "children": [
+          {
+            "name": "Current Wi-Fi SSID",
+            "command": "networksetup -getairportnetwork en0",
+            "description": "Show the currently connected Wi-Fi network"
+          },
+          {
+            "name": "Wi-Fi MAC Address",
+            "command": "ifconfig en0 | awk '/ether/{print $2}'",
+            "description": "Show MAC address of Wi-Fi interface"
+          },
+          {
+            "name": "Open Wireless Diagnostics",
+            "command": "open -a 'Wireless Diagnostics'",
+            "description": "Apple’s official Wi-Fi troubleshooting tool"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Development",
+    "children": [
+      {
+        "label": "Git",
+        "children": [
+          {
+            "name": "Status",
+            "command": "git status",
+            "description": "Working directory status"
+          },
+          {
+            "name": "Recent Commits",
+            "command": "git log --oneline -10",
+            "description": "Last 10 commits"
+          }
+        ]
+      },
+      {
+        "label": "Python",
+        "children": [
+          {
+            "name": "Python Version",
+            "command": "python3 --version",
+            "description": "Installed Python version"
+          },
+          {
+            "name": "Create venv",
+            "command": "python3 -m venv venv",
+            "description": "Create virtual environment in ./venv"
+          },
+          {
+            "name": "Install package (example: requests)",
+            "command": "python3 -m pip install requests",
+            "description": "Install Python package"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Package Managers",
+    "children": [
+      {
+        "label": "Homebrew",
+        "children": [
+          {
+            "name": "Update Homebrew",
+            "command": "brew update",
+            "description": "Refresh brew formulas"
+          },
+          {
+            "name": "Upgrade Packages",
+            "command": "brew upgrade",
+            "description": "Upgrade all installed packages"
+          },
+          {
+            "name": "Cleanup",
+            "command": "brew cleanup",
+            "description": "Remove old versions & caches"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Files & Directories",
+    "children": [
+      {
+        "label": "Navigation",
+        "children": [
+          {
+            "name": "Change Directory",
+            "command": "cd ~/Documents",
+            "description": "Change to Documents folder"
+          },
+          {
+            "name": "List Contents",
+            "command": "ls -la",
+            "description": "Long list with hidden files"
+          },
+          {
+            "name": "Find Large Files",
+            "command": "find . -type f -size +100M",
+            "description": "Find files >100 MB"
+          }
+        ]
+      },
+      {
+        "label": "Operations",
+        "children": [
+          {
+            "name": "Copy File",
+            "command": "cp __FILENAME__ __DEST__",
+            "description": "Copy a file"
+          },
+          {
+            "name": "Move/Rename",
+            "command": "mv __OLDNAME__ __NEWNAME__",
+            "description": "Move or rename file"
+          },
+          {
+            "name": "Delete File",
+            "command": "rm __FILENAME__",
+            "description": "Delete a file"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Users & Permissions",
+    "children": [
+      {
+        "label": "Users",
+        "children": [
+          {
+            "name": "Current User",
+            "command": "whoami",
+            "description": "Show username"
+          },
+          {
+            "name": "User Groups",
+            "command": "groups",
+            "description": "Show group memberships"
+          }
+        ]
+      },
+      {
+        "label": "Permissions",
+        "children": [
+          {
+            "name": "File Permissions",
+            "command": "ls -l __FILENAME__",
+            "description": "List file permissions"
+          },
+          {
+            "name": "Change Permissions",
+            "command": "chmod 755 __FILENAME__",
+            "description": "Set rwxr-xr-x"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Processes & Tasks",
+    "children": [
+      {
+        "name": "top",
+        "command": "top",
+        "description": "Live system monitor"
+      },
+      {
+        "name": "htop (brew)",
+        "command": "htop",
+        "description": "Enhanced monitor (requires brew install htop)"
+      },
+      {
+        "name": "Kill by PID",
+        "command": "kill -9 __PID__",
+        "description": "Replace __PID__ with process ID"
+      }
+    ]
+  },
+  {
+    "label": "Debug & Logs",
+    "children": [
+      {
+        "name": "Kernel Log (tail)",
+        "command": "dmesg | tail",
+        "description": "Last kernel messages"
+      },
+      {
+        "name": "Live System Log",
+        "command": "log stream --style syslog",
+        "description": "Live unified log"
+      }
+    ]
+  },
+  {
+    "label": "Network Tools",
+    "children": [
+      {
+        "name": "Ping",
+        "command": "ping -c 4 google.com",
+        "description": "Ping Google 4 times"
+      },
+      {
+        "name": "Traceroute",
+        "command": "traceroute google.com",
+        "description": "Trace route to Google"
+      },
+      {
+        "name": "Curl Example",
+        "command": "curl -I https://example.com",
+        "description": "HTTP HEAD request"
+      },
+      {
+        "name": "DNS Lookup",
+        "command": "dig +short example.com",
+        "description": "Quick DNS lookup"
+      }
+    ]
+  },
+  {
+    "label": "Clipboard",
+    "children": [
+      {
+        "name": "Copy File to Clipboard",
+        "command": "pbcopy < __FILENAME__",
+        "description": "Copy file contents"
+      },
+      {
+        "name": "Paste Clipboard to File",
+        "command": "pbpaste > __FILENAME__",
+        "description": "Save clipboard to file"
+      }
+    ]
+  },
+  {
+    "label": "System Maintenance",
+    "children": [
+      {
+        "name": "Clear User Caches",
+        "command": "rm -rf ~/Library/Caches/*",
+        "description": "Remove app cache data"
+      },
+      {
+        "name": "Purge Inactive RAM",
+        "command": "sudo purge",
+        "description": "Try to free inactive RAM"
+      },
+      {
+        "name": "Safe Boot",
+        "command": "sudo nvram boot-args=\"-x\" && sudo reboot",
+        "description": "Reboot in safe mode"
+      }
+    ]
+  },
+  {
+    "label": "Privacy & Security",
+    "children": [
+      {
+        "name": "Gatekeeper Status",
+        "command": "spctl --status",
+        "description": "Check if Gatekeeper is enabled"
+      },
+      {
+        "name": "Enable Firewall",
+        "command": "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on",
+        "description": "Turn on the macOS firewall"
+      },
+      {
+        "name": "List Allowed Apps (Firewall)",
+        "command": "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps",
+        "description": "Show apps allowed through firewall"
+      }
+    ]
+  }
+]
