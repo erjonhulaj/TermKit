@@ -85,6 +85,10 @@ Launch **TermKit**:
 | **Enter**    | Copy command to clipboard       |
 | **Cmd/Ctrl + V**    | Manually paste into your terminal |
 | **q**      | Quit                            |
+| **a**      | Add custom command                            |
+| **d**      | Delete custom command                            |
+| **f**      | Add/Delete favorite                            |
+| **/**      | Search                           |
 
 ---
 
