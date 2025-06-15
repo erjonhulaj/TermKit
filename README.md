@@ -21,7 +21,7 @@ It shows an interactive, categorized menu of useful system commands — copied t
 - Clean Textual-based TUI
 - Arrow-key navigation (↑ ↓ + Enter)
 - System, Network, Development, Custom categories
-- Commands are *copied*, not executed (safety first!)
+- Commands are *copied*, not executed.
 - Extendable with your own custom commands
 - Favorites
 - Search
