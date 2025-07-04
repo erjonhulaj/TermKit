@@ -7,6 +7,12 @@ It shows an interactive, categorized menu of useful system commands — copied t
 
 ---
 
+## 🎬 Demo
+
+![TermKit Demo](assets/termkit-demo.gif)
+
+---
+
 ## 📦 Downloads
 
 | Platform | File |
