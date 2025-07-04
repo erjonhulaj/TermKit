@@ -104,23 +104,11 @@ TermKit is ideal for:
 
 ---
 
-### 📃 LICENCE
+## 📃 License
 
-This project is licensed under the  
-**Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)**  
-👉 <https://creativecommons.org/licenses/by-nc-nd/4.0/>
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
-You are free to:
-
-- ✅ **Use and modify** TermKit for personal, non-commercial purposes
-
-You may **not**:
-
-- ❌ Use TermKit or its code for commercial use  
-- ❌ Publish modified versions or reuse parts of the code  
-- ❌ Create derivatives or spin-offs  
-
-> © 2025 Erjon Hulaj. All rights reserved.
+© 2025 Erjon Hulaj
 
 ---
 
